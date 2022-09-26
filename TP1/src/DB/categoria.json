@@ -1,0 +1,53 @@
+{
+    "array": [
+        {
+            "categoria": "Pastas",
+            "subcategoria": false,
+            "link":"url" ,
+            "img":""
+        },
+        {
+            "categoria": "Salsas",
+            "subcategoria": false,
+            "link": "url3",
+            "img":""
+        },
+        {
+            "categoria": "Pizzas",
+            "subcategoria": false,
+            "link": "url2",
+            "img":""
+        },
+        {
+            "categoria": "Hamburguezas",
+            "subcategoria": false,
+            "link": "url2",
+            "img":""
+        },
+        {
+            "categoria": "Japones",
+            "subcategoria": false,
+            "link": "url2",
+            "img":""
+        },
+        {
+            "categoria": "Mexicano",
+            "subcategoria": false,
+            "link": "url2",
+            "img":""
+        },
+        {
+            "categoria": "Postres",
+            "subcategoria": false,
+            "link": "url2",
+            "img":""
+        },
+        {
+            "categoria": "Fiesta",
+            "subcategoria": false,
+            "link": "url2",
+            "img":"",
+            "dia":["25-5","9-7"]
+        }
+    ]
+}
