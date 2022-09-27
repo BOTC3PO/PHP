@@ -1,12 +1,812 @@
 {
     "array": [
         {
-            "categoria":"pasta",
-            "nombre":"tallarin",
-            "ID":0 ,
-            "datos":"",
-            "precio":"",
-            "promociones":""
+            "categoria": "pasta",
+            "nombre": "tallarin",
+            "ID": 0,
+            "datos": "",
+            "precio": "300 ars",
+            "promociones": "puedes seleccionar una salsa con 100% de descuento"
+        },
+        {
+            "categoria": "pasta",
+            "nombre": "Espagueti",
+            "ID": 1,
+            "datos": "",
+            "precio": "250 ars",
+            "promociones": "puedes seleccionar una salsa con 100% de descuento"
+        },
+        {
+            "categoria": "pasta",
+            "nombre": "Fettuccine",
+            "ID": 2,
+            "datos": "",
+            "precio": "340 ars",
+            "promociones": "puedes seleccionar una salsa con 100% de descuento"
+        },
+        {
+            "categoria": "pasta",
+            "nombre": "Bucatini",
+            "ID": 3,
+            "datos": "",
+            "precio": "300 ars",
+            "promociones": "puedes seleccionar una salsa con 100% de descuento"
+        },
+        {
+            "categoria": "pasta",
+            "nombre": "maccheroni",
+            "ID": 4,
+            "datos": "",
+            "precio": "",
+            "promociones": "puedes seleccionar una salsa con 100% de descuento"
+        },
+        {
+            "categoria": "pasta",
+            "nombre": "Ñoqui",
+            "ID": 5,
+            "datos": "",
+            "precio": "",
+            "promociones": "puedes seleccionar una salsa con 100% de descuento"
+        },
+        {
+            "categoria": "pasta",
+            "nombre": "Fusilli",
+            "ID": 6,
+            "datos": "",
+            "precio": "",
+            "promociones": "puedes seleccionar una salsa con 100% de descuento"
+        },
+        {
+            "categoria": "pasta",
+            "nombre": "Ravioli",
+            "ID": 7,
+            "datos": "",
+            "precio": "",
+            "promociones": "puedes seleccionar una salsa con 100% de descuento"
+        },
+        {
+            "categoria": "pasta",
+            "nombre": "Cappelletti",
+            "ID": 8,
+            "datos": "",
+            "precio": "",
+            "promociones": "puedes seleccionar una salsa con 100% de descuento"
+        },
+        {
+            "categoria": "Salsas",
+            "nombre": "Alfredo",
+            "ID": 9,
+            "datos": "crema de leche,queso parmesano y mantequilla",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Salsas",
+            "nombre": "amatriciana",
+            "ID": 10,
+            "datos": "tomate,panceta,mozzarela y cebolla",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Salsas",
+            "nombre": "arrabbiata",
+            "ID": 11,
+            "datos": "tomate,ajo y guindillas",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Salsas",
+            "nombre": "boloñesa",
+            "ID": 12,
+            "datos": "carne picada,cebolla,tomate y zanahoria",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Salsas",
+            "nombre": "carbonara",
+            "ID": 13,
+            "datos": "crema de leche,beacon,cebolla y queso",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Salsas",
+            "nombre": "napolitana",
+            "ID": 14,
+            "datos": "ajo,tomate y albahaca",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Salsas",
+            "nombre": "pesto genovés",
+            "ID": 15,
+            "datos": "albahaca,parmesano,ajo,pinones y aceite",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Salsas",
+            "nombre": "puttanesca",
+            "ID": 16,
+            "datos": "ajo,filetes de anchoa,tomate,aceitunas negras y alcaparras en vinagre",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Salsas",
+            "nombre": "funghi",
+            "ID": 17,
+            "datos": "champiñones,cebolla,vino blanco y nata",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Salsas",
+            "nombre": "pimentón picante",
+            "ID": 18,
+            "datos": "pimientos verdes y rojos , cebolla ,setas,laurel y tomates ",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Pizzas",
+            "nombre": "normal",
+            "ID": 19,
+            "datos": "pizza de muzzarella",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Pizzas",
+            "nombre": "napolitana",
+            "ID": 20,
+            "datos": "pizza de muzzarella con tomates",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Pizzas",
+            "nombre": "rellena",
+            "ID": 21,
+            "datos": "pizza rellena de mozzarella y jamon con muzzarella , jamon , albahaca y tomates",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Pizzas",
+            "nombre": "torta",
+            "ID": 22,
+            "datos": "pizza de 6 niveles con mozzarela , tomate y jamon",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Pizzas",
+            "nombre": "hawaiana",
+            "ID": 23,
+            "datos": "pizza con mozzarella piña y jamon",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Pizzas",
+            "nombre": "arcoiris",
+            "ID": 24,
+            "datos": "pizza con pimiento rojo,zanahoria,choclo,brócoli,cebolla morada,col morada y mozzarella",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Pizzas",
+            "nombre": "queso y jamón",
+            "ID": 25,
+            "datos": "pizza con queso y jamon",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Hamburguezas",
+            "nombre": "clasica",
+            "ID": 26,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Hamburguezas",
+            "nombre": "palta",
+            "ID": 27,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Hamburguezas",
+            "nombre": "árabe",
+            "ID": 28,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Hamburguezas",
+            "nombre": "vegetariana",
+            "ID": 29,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Hamburguezas",
+            "nombre": "mexicana con guacamole",
+            "ID": 30,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Hamburguezas",
+            "nombre": "doble clasica",
+            "ID": 31,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Hamburguezas",
+            "nombre": "queso",
+            "ID": 32,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Hamburguezas",
+            "nombre": "doble con queso",
+            "ID": 33,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Hamburguezas",
+            "nombre": "XXL",
+            "ID": 34,
+            "datos": "la hamburqueza pesa aproximadamente 2.5kg y 18 cm de diametro recomendada para un minimo de 5 personas contiene 2 medallones de carne de 750g queso,pepino cebolla,tomate lechuga,mostaza y ketchup",
+            "precio": "6000 ars",
+            "promociones": null
+        },
+        {
+            "categoria": "Japones",
+            "nombre": "Yakiniku",
+            "ID": 35,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Japones",
+            "nombre": "Sushi",
+            "ID": 36,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Japones",
+            "nombre": "Kare raisu",
+            "ID": 37,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Japones",
+            "nombre": "Onigiri",
+            "ID": 38,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Japones",
+            "nombre": "Ramen",
+            "ID": 39,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Japones",
+            "nombre": "Yakisoba",
+            "ID": 40,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Japones",
+            "nombre": "Chawanmushi",
+            "ID": 41,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Japones",
+            "nombre": "Kaiseki",
+            "ID": 42,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Mexicano",
+            "nombre": "Tacos al pastor",
+            "ID": 43,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Mexicano",
+            "nombre": "Tacos gobernador",
+            "ID": 44,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Mexicano",
+            "nombre": "Quesadillas",
+            "ID": 45,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Mexicano",
+            "nombre": "Burritos",
+            "ID": 46,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Empanadas",
+            "nombre": "atun y queso",
+            "ID": 47,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Empanadas",
+            "nombre": "atun picante",
+            "ID": 48,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Empanadas",
+            "nombre": "carne",
+            "ID": 49,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Empanadas",
+            "nombre": "carne picante",
+            "ID": 50,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Empanadas",
+            "nombre": "carne extra picante",
+            "ID": 51,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Empanadas",
+            "nombre": "pollo",
+            "ID": 52,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Empanadas",
+            "nombre": "pollo picante",
+            "ID": 53,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Empanadas",
+            "nombre": "arabes",
+            "ID": 54,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Empanadas",
+            "nombre": "humita",
+            "ID": 55,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Empanadas",
+            "nombre": "queso ricotta y espinacas",
+            "ID": 56,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Empanadas",
+            "nombre": "manzana",
+            "ID": 57,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Empanadas",
+            "nombre": "el reto",
+            "ID": 58,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Otros",
+            "nombre": "empanada de hamburguesa",
+            "ID": 59,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Otros",
+            "nombre": "arroz a la española",
+            "ID": 60,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Otros",
+            "nombre": "Arroz picante",
+            "ID": 61,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Otros",
+            "nombre": "Calzone napolitano",
+            "ID": 62,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Otros",
+            "nombre": "pizza envuelta",
+            "ID": 63,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Otros",
+            "nombre": "el reto harcore",
+            "ID": 64,
+            "datos": "un calzone con el relleno de &#34el reto&#34",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "helado de vainilla",
+            "ID": 65,
+            "datos": "250g de helado",
+            "precio": "450 ars",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "helado de chocolate",
+            "ID": 66,
+            "datos": "",
+            "precio": "450 ars",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "helado de menta",
+            "ID": 67,
+            "datos": "",
+            "precio": "450 ars",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "helado de frutilla",
+            "ID": 68,
+            "datos": "",
+            "precio": "450 ars",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "helado de limon",
+            "ID": 69,
+            "datos": "",
+            "precio": "450 ars",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "flan",
+            "ID": 70,
+            "datos": "1 flan",
+            "precio": "250 ars",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "gelatina",
+            "ID": 71,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "yogur y gelatina",
+            "ID": 72,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "Macarrones",
+            "ID": 73,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "jalapeños",
+            "ID": 74,
+            "datos": "4 jalapeños",
+            "precio": "50 ars",
+            "promociones": "40% de descuento con la compra de Bloody Mary"
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "banana",
+            "ID": 75,
+            "datos": "una banana",
+            "precio": "80 ars",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "manzana",
+            "ID": 76,
+            "datos": "una manzana",
+            "precio": "80 ars",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "naranja",
+            "ID": 77,
+            "datos": "una naranja",
+            "precio": "70 ars",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "frutillas",
+            "ID": 78,
+            "datos": "500g de frutillas",
+            "precio": "300 ars",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "frutillas con crema",
+            "ID": 79,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Postres",
+            "nombre": "chocolate y queso",
+            "ID": 80,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "locro",
+            "nombre": "locro",
+            "ID": 81,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Fiesta",
+            "nombre": "asado",
+            "ID": 82,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Fiesta",
+            "nombre": "picada",
+            "ID": 83,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "agua",
+            "ID": 84,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "coca cola",
+            "ID": 85,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "sprite",
+            "ID": 86,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "pepsi",
+            "ID": 87,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "fanta",
+            "ID": 88,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "coca zero",
+            "ID": 89,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "fernet con coca",
+            "ID": 90,
+            "datos": "fernet con coca",
+            "precio": "450 ars",
+            "promociones": null
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "fernet con manaos uva",
+            "ID": 91,
+            "datos": "por que razon ordenarias esto",
+            "precio": "400 ars",
+            "promociones": "50% de descuento en postres con la compra de este trago"
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "destornillador",
+            "ID": 92,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "cuba libre",
+            "ID": 93,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "Julepe de Menta",
+            "ID": 94,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "Negroni",
+            "ID": 95,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "Piña Colada",
+            "ID": 96,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "Margarita",
+            "ID": 97,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "Bloody Mary",
+            "ID": 98,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "vodka",
+            "ID": 99,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
+        },
+        {
+            "categoria": "Bebidas y tragos",
+            "nombre": "cerveza",
+            "ID": 100,
+            "datos": "",
+            "precio": "",
+            "promociones": ""
         }
     ]
 }

@@ -11,7 +11,7 @@ a,button{
 .navbar-scroll .nav-link,
 .navbar-scroll .navbar-toggler-icon,
 .navbar-scroll .navbar-brand {
-  color: #fff;
+  color: #fff; 
 }
 
 /* Color of the links AFTER scroll */

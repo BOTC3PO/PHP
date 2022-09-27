@@ -3,51 +3,76 @@
         {
             "categoria": "Pastas",
             "subcategoria": false,
-            "link":"url" ,
-            "img":""
+            "link": "url",
+            "img": ""
         },
         {
             "categoria": "Salsas",
             "subcategoria": false,
             "link": "url3",
-            "img":""
+            "img": ""
         },
         {
             "categoria": "Pizzas",
             "subcategoria": false,
             "link": "url2",
-            "img":""
+            "img": ""
         },
         {
             "categoria": "Hamburguezas",
             "subcategoria": false,
             "link": "url2",
-            "img":""
+            "img": ""
         },
         {
             "categoria": "Japones",
             "subcategoria": false,
             "link": "url2",
-            "img":""
+            "img": ""
         },
         {
             "categoria": "Mexicano",
             "subcategoria": false,
             "link": "url2",
-            "img":""
+            "img": ""
+        },
+        {
+            "categoria": "Empanadas",
+            "subcategoria": false,
+            "link": "url2",
+            "img": ""
+        },
+        {
+            "categoria": "Otros",
+            "subcategoria": false,
+            "link": "url2",
+            "img": ""
         },
         {
             "categoria": "Postres",
             "subcategoria": false,
             "link": "url2",
-            "img":""
+            "img": ""
         },
         {
+            "categoria": "Locro",
+            "subcategoria": false,
+            "link": "url2",
+            "img": "",
+            "dia": [
+                "25-5",
+                "9-7"
+            ]
+        },{
             "categoria": "Fiesta",
             "subcategoria": false,
             "link": "url2",
-            "img":"",
-            "dia":["25-5","9-7"]
+            "img": ""
+        },{
+            "categoria": "Bebidas y tragos",
+            "subcategoria": false,
+            "link": "url2",
+            "img": ""
         }
     ]
 }
