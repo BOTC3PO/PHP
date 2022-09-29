@@ -60,15 +60,17 @@
             "link": "url2",
             "img": "",
             "dia": [
-                "25-5",
-                "9-7"
+                "25-05",
+                "9-07"
             ]
-        },{
+        },
+        {
             "categoria": "Fiesta",
             "subcategoria": false,
             "link": "url2",
             "img": ""
-        },{
+        },
+        {
             "categoria": "Bebidas y tragos",
             "subcategoria": false,
             "link": "url2",

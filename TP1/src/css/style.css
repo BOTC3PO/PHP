@@ -6,6 +6,29 @@
 a,button{
     cursor: url("../mouse/pointer.png") , pointer!important;
 }*/
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(114, 114, 114) rgb(211, 211, 211);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 0.4vw;
+  min-width: 10px;
+  max-width: 20px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(211, 211, 211);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(114, 114, 114);
+  border-radius: 10px;
+}
+
 /*nav*/
 /* Color of the links BEFORE scroll */
 .navbar-scroll .nav-link,
@@ -30,6 +53,7 @@ a,button{
 .mask-custom {
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, .15);
+  
 }
 
 .navbar-brand {
@@ -41,7 +65,38 @@ a,button{
 .pegaoaltecho{
     position: sticky;
     top: 0;
+    
+}
+.dropdown-menu {
+  z-index: 30 !important;
 }
 
+/*footer*/
+.foot{
+  height: 50vh;
+  background-color: black;
 
-/**/
+  bottom: 0;
+
+}
+
+.iconos>a{
+width: 70px !important;
+height: 70px !important;
+text-decoration:none;
+}
+
+/*iconos*/
+.iconos{
+  filter: invert(2);
+}
+.iconos>a>img{
+  font-size: 3.9292rem;
+  margin: 1rem;
+}
+
+.marca{
+color: #cbbcb1;
+font-size: 1rem;
+text-align: center;
+}
