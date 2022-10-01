@@ -75,7 +75,7 @@
                     if ($bolian) {
                     
                         switch ($value[$rando]["categoria"]) {
-                            case 'Pasta':
+                            case 'Pastas':
                                 $mensaje = "Plato de ". $value[$rando]["nombre"];
                                 break;
                             case 'Salsas':
@@ -85,7 +85,7 @@
                                 $mensaje = "Pizza  ". $value[$rando]["nombre"];
                                 break;
                             case 'Hamburguezas':
-                                $mensaje = "Hamburguezas ". $value[$rando]["nombre"];
+                                $mensaje = "Hamburgueza ". $value[$rando]["nombre"];
                                 break; 
                             case 'Japones':
                                 $mensaje =  $value[$rando]["nombre"];
@@ -120,7 +120,7 @@
 
 
 
-                    echo "<div class=col><div class=card style=width:18rem><img src=src/img/{$rando}.webp class=a id=a{$i} alt={$value[$rando]["nombre"]}><div class=card-body><h5 class=card-title>{$mensaje}</h5><p class=card-text>Some quick example text to build on the card title and make up the bulk of the card s content.</p></div><ul class=list-group list-group-flush><li class=list-group-item>{$value[$rando]["precio"]}</li></ul><div class=card-body><a href=n   class=card-link>Card link</a><a href=n class=card-link>Another link</a></div></div></div >";
+                    echo "<div class=col><div class=card style=width:18rem><img src=src/img/{$rando}.webp class=a id=a{$i} alt={$value[$rando]["nombre"]}><div class=texto><h5 class=card-title>{$mensaje}</h5><p class=card-text>{$value[$rando]["datos"]}</p></div><ul class=list-group list-group-flush><li class=list-group-item>&#36 {$value[$rando]["precio"]}</li></ul><div class=card-body><a href=n   class=card-link>Card link</a><a href=n class=card-link>Another link</a></div></div></div >";
                     
                     }
 

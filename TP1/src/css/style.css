@@ -12,16 +12,14 @@ a,button{
 
 /* Works on Firefox */
 * {
-  scrollbar-width: thin;
+  scrollbar-width: 5px;
   scrollbar-color: rgb(114, 114, 114) rgb(211, 211, 211);
 }
 
 /* Works on Chrome, Edge, and Safari */
 
 *::-webkit-scrollbar {
-  width: 0.4vw;
-  min-width: 10px;
-  max-width: 20px;
+  width: 5px;
 }
 
 *::-webkit-scrollbar-track {
@@ -147,22 +145,6 @@ a,button{
   align-self: center;
   overflow: hidden;
 }
-/*
-.navbar>.container,
-.navbar>.container-fluid,
-.navbar>.container-lg,
-.navbar>.container-md,
-.navbar>.container-sm,
-.navbar>.container-xl,
-.navbar>.container-xxl {
-  justify-content: unset;
-}
-
-.navbar-brand{
-  width: 80%;
-}
-*/
-
 
 .card>.list-group{
 border: 0;
@@ -171,3 +153,19 @@ border: 0;
 border:0;
 text-align: center;
 }
+.mobilever{
+  overflow-y: auto;
+  scrollbar-width: 1px;
+  min-height: 170px;
+  max-height: 170px;
+}
+
+
+@media (max-width:900px) {
+  .mobilever{
+    overflow-y:  unset;
+    min-height: none;
+    max-height: none;
+  }  
+}
+

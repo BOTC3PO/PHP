@@ -42,7 +42,7 @@
                                    }
                                 }
                                 if ($bola) {
-                                    echo "<li><a class=dropdown-item  href=# >{$value[$i]["categoria"]}</a></li>";
+                                    echo "<li><a class=dropdown-item  href={$value[$i]["link"]} >{$value[$i]["categoria"]}</a></li>";
                                 }
                                 $bola=true;      
                               };
