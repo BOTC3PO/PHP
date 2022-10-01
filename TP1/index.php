@@ -22,15 +22,15 @@
 
 </head>
 
-<body>
+<body onload="setTimeout(cargarindex(),3000)">
     <?php
          require('src/templates/nav.php');
     ?>
 
-    <!--banner-->
+
 
     <div class="container text-center">
-        <div class="row row-cols-2 row-cols-lg-4">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 justify-content-around justify-content-lg-center justify-content-xxl-center indexmen">
             <?php
                 $pro= @file_get_contents('src/DB/productos.json');
                 $pro=json_decode($pro, true);
@@ -44,6 +44,10 @@
                     $bolian=true ;
                     $rando=rand(0,100);
                     # echo $rando ." \n";
+                    if ($i==0) {
+                        array_push($numeros,$rando);
+                    }
+
                     if (!$i==0) {
                              if (in_array($rando,$numeros)) {
                                  $bolian=false;
@@ -72,7 +76,7 @@
                     
                         switch ($value[$rando]["categoria"]) {
                             case 'Pasta':
-                                $mensaje = "plato de ". $value[$rando]["nombre"];
+                                $mensaje = "Plato de ". $value[$rando]["nombre"];
                                 break;
                             case 'Salsas':
                                 $mensaje = "Salsa ". $value[$rando]["nombre"];
@@ -99,7 +103,7 @@
                                 $mensaje =  $value[$rando]["nombre"];
                                 break; 
                             case 'locro':
-                                $mensaje = "plato de ". $value[$rando]["nombre"];
+                                $mensaje = "Plato de ". $value[$rando]["nombre"];
                                 break;       
                             case 'Fiesta':
                                 $mensaje =  $value[$rando]["nombre"];
@@ -110,8 +114,18 @@
                         }
                     
                      #   {$value[$rando]["categoria"]} {$value[$rando]["nombre"]};
-                        echo   "<div class=col><div class=p-3 border bg-light><img src={$rando}.webp   alt={$value[$rando]["nombre"]} ><p>$mensaje</p></div></div >";
+                     #   echo   "<div class=col><div class=p-3 border bg-light><img src=src/img/{$rando}.webp class=cardC  alt={$value[$rando]["nombre"]} ><p>$mensaje</p></div></div >";
+                    
+
+
+
+
+                    echo "<div class=col><div class=card style=width:18rem><img src=src/img/{$rando}.webp class=a id=a{$i} alt={$value[$rando]["nombre"]}><div class=card-body><h5 class=card-title>{$mensaje}</h5><p class=card-text>Some quick example text to build on the card title and make up the bulk of the card s content.</p></div><ul class=list-group list-group-flush><li class=list-group-item>{$value[$rando]["precio"]}</li></ul><div class=card-body><a href=n   class=card-link>Card link</a><a href=n class=card-link>Another link</a></div></div></div >";
+                    
                     }
+
+
+
                     }
                     #var_dump($numeros);
                 }

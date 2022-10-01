@@ -7,6 +7,9 @@ a,button{
     cursor: url("../mouse/pointer.png") , pointer!important;
 }*/
 
+
+
+
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
@@ -14,6 +17,7 @@ a,button{
 }
 
 /* Works on Chrome, Edge, and Safari */
+
 *::-webkit-scrollbar {
   width: 0.4vw;
   min-width: 10px;
@@ -34,7 +38,7 @@ a,button{
 .navbar-scroll .nav-link,
 .navbar-scroll .navbar-toggler-icon,
 .navbar-scroll .navbar-brand {
-  color: #fff; 
+  color: #fff;
 }
 
 /* Color of the links AFTER scroll */
@@ -53,7 +57,7 @@ a,button{
 .mask-custom {
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, .15);
-  
+
 }
 
 .navbar-brand {
@@ -62,41 +66,108 @@ a,button{
 }
 
 /*clases*/
-.pegaoaltecho{
-    position: sticky;
-    top: 0;
-    
+.pegaoaltecho {
+  position: sticky;
+  top: 0;
+  z-index: 1 !important;
 }
+
 .dropdown-menu {
   z-index: 30 !important;
 }
 
 /*footer*/
-.foot{
+.foot {
   height: 50vh;
   background-color: black;
-
   bottom: 0;
-
+  min-width: 100vw;
+  padding: 0;
 }
 
-.iconos>a{
-width: 70px !important;
-height: 70px !important;
-text-decoration:none;
+.iconos>a {
+  width: fit-content;
+  height: fit-content;
+  text-decoration: none;
 }
 
 /*iconos*/
-.iconos{
+.iconos {
   filter: invert(2);
-}
-.iconos>a>img{
-  font-size: 3.9292rem;
-  margin: 1rem;
+  padding: 0;
+
 }
 
-.marca{
-color: #cbbcb1;
-font-size: 1rem;
+@media (max-width:800px) {
+  .iconos{
+      max-width: fit-content;
+  }
+}
+
+
+.iconos>div>a>img {
+  font-size: 3.9292rem;
+  margin: 1rem;
+  padding: 0;
+}
+
+.iconos>div{
+  text-align: center;
+ padding: 0;
+ max-width:50vw;
+}
+
+.marca {
+  color: #cbbcb1;
+  font-size: 1rem;
+  text-align: center;
+}
+
+
+
+/*card index*/
+/*
+.card{
+  height: 100%;
+}
+¨*/
+.cardC {
+  max-width: 500px;
+}
+
+.indexmen>div {
+  margin: 5px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.indexmen>div>div>img {
+  height: 250px;
+  width: fit-content;
+  align-self: center;
+  overflow: hidden;
+}
+/*
+.navbar>.container,
+.navbar>.container-fluid,
+.navbar>.container-lg,
+.navbar>.container-md,
+.navbar>.container-sm,
+.navbar>.container-xl,
+.navbar>.container-xxl {
+  justify-content: unset;
+}
+
+.navbar-brand{
+  width: 80%;
+}
+*/
+
+
+.card>.list-group{
+border: 0;
+}
+.list-group>li{
+border:0;
 text-align: center;
 }

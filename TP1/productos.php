@@ -17,11 +17,69 @@
          require('src/templates/nav.php');
     ?>
 
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
 
 
-    
+<?php
+                $pro= @file_get_contents('src/DB/productos.json');
+                $pro=json_decode($pro, true);
+                $date_now = date('d-m');
+                $numeros=array();
+                $bolian=true;
+                #var_dump($pro);
+                foreach ($pro as $value) {
+                    for ($i=0; $i < 8; $i++) { 
+                    do {
+                    $bolian=true ;
+                    $rando=rand(0,100);
+                    # echo $rando ." \n";
+                    if ($i==0) {
+                        array_push($numeros,$rando);
+                    }
+
+                    if (!$i==0) {
+                             if (in_array($rando,$numeros)) {
+                                 $bolian=false;
+                             }else {
+                                 array_push($numeros,$rando);
+                             }
+                    }
+               
+                    } while (!$bolian);
+                    $boliano=(in_array($date_now,$value[81]["dia"]));
+                    echo $boliano;
+                    if ($rando!=81 and $boliano ) {
+                        $bolian=true;
+                    }else {
+                        if ($rando==81) {
+                            $bolian=false;
+                            $i--;
+                        }else {
+                            $bolian=true;
+                        }
 
 
+                     }
+
+                     if ($bolian) {
+
+                        
+
+                     }
+
+                    }
+                }
+                    ?>
+
+</ul>
+</div>
 <?php
          require('src/templates/foot.php');
     ?>

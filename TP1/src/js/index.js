@@ -102,12 +102,12 @@
     });
     
 })(jQuery);
-*/
+
 //second
 
 
 
-//use
+//unused
 var respuesta;
 var data;
 
@@ -166,4 +166,16 @@ function parametro(key,value) {
 
     // reload page with new params
     document.location.search = params;
+}
+*/
+
+function cargarindex() { 
+  dato=[document.getElementById("a0"),document.getElementById("a1"),document.getElementById("a2"),document.getElementById("a3"),document.getElementById("a4"),document.getElementById("a5"),document.getElementById("a6"),document.getElementById("a7")];
+
+for (let index = 0; index < 8; index++) {
+    dato[index].classList.add("card-img-top");
+    dato[index].classList.add("img-fluid");
+    
+}
+  
 }
