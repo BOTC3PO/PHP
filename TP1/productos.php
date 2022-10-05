@@ -16,13 +16,13 @@
     <?php
          require('src/templates/nav.php');
     ?>
-
+<!--
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown button
         </button>
         <ul class="dropdown-menu">
-            <?php           
+            <?php    /*       
                 
                 $data= @file_get_contents('src/DB/categoria.json');
                 $data=json_decode($data, true);
@@ -46,11 +46,11 @@
             $bola=true;      
           };
         }
-                    ?>
+                   */ ?>
 
         </ul>
     </div>
-
+-->
 
     <div class="container text-center">
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 justify-content-around justify-content-lg-center justify-content-xxl-center indexmen">
@@ -119,7 +119,7 @@
                       }
 
                    
-                    echo "<div class=col><div class=card style=width:18rem><img src=src/img/{$i}.webp class=a id=a{$i} alt={$value[$i]["nombre"]}><div class=texto><h5 class=card-title>{$mensaje}</h5><p class=card-text>{$value[$i]["datos"]}</p></div><ul class=list-group list-group-flush><li class=list-group-item>&#36 {$value[$i]["precio"]}</li></ul><div class=card-body><a href=n   class=card-link>Card link</a><a href=n class=card-link>Another link</a></div></div></div >";
+                    echo "<div class=col><div class=card style=width:18rem><img src=src/img/{$i}.webp class=a id=a{$i} alt={$value[$i]["nombre"]}><div class=texto><h5 class=card-title>{$mensaje}</h5><p class=card-text>{$value[$i]["datos"]}</p></div><ul class=list-group list-group-flush><li class=list-group-item>&#36 {$value[$i]["precio"]}</li></ul><div class=card-body><a href=muestra.php?ID={$value[$i]["ID"]} class=card-link>ver</a><a href=carrito.php class=card-link>carrito</a></div></div></div >";
                       
                     }
 
