@@ -80,6 +80,8 @@ body{
   z-index: 30 !important;
 }
 
+
+
 /*footer*/
 .foot {
   height: 50vh;
@@ -127,7 +129,10 @@ body{
   text-align: center;
 }
 
-
+a{
+  text-decoration: none;
+  color: black;
+}
 
 /*card index*/
 /*
@@ -155,7 +160,7 @@ body{
   background-repeat: no-repeat;
   background-position: 50% 50%;
   align-self: center;
-  
+
 }
 
 .card{
@@ -197,7 +202,7 @@ max-height: fit-content;
 @media (min-width:900px){
 .staticos{
   position: sticky;
-  max-height:90vh;
+  max-height:70vh;
   z-index: 0;
   top: 0;
   
@@ -209,7 +214,7 @@ min-height: 40vw;
   padding-right: 5px;*/
 }
 .datos_objetos{
-  width: 90vh;
+  min-height: 30vh;
 }
 }
 
@@ -235,3 +240,61 @@ border-radius: 5px;
 padding: 0.3rem;
 }
 
+/*contacto*/
+
+
+
+.info>div>a{
+  text-decoration: none;
+  width: fit-content;
+  height: fit-content;
+  color: rgb(34, 34, 34);
+}
+
+.info>div>a:hover{
+  color: rgb(0, 255, 136);
+}
+
+.infomap{
+  padding: 0;
+  border: rgb(255, 255, 255) 1rem solid;
+
+}
+
+iframe{
+  width: 100%;
+  border-radius: 15px;
+}
+
+.divex{
+  min-height: 50vh;
+  border: 1px gainsboro solid;
+  margin: 5px;
+}
+
+.divex2{
+  border: 1px gainsboro solid;
+  margin: 5px;
+}
+
+.input-group{
+  justify-content: center;
+
+}
+.ziup{
+  min-width: 50vw;
+}
+
+.l12{
+  text-align: center center;
+  min-width: 50vw;
+  margin-top: 5px;
+  background-color: rgb(27, 27, 27);
+  color: #fff;
+  z-index: 0 !important;
+}
+
+.l12:hover{
+  background-color: green !important;
+  color: #fff !important;
+}

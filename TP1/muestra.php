@@ -65,8 +65,9 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"
         type="text/css">
     <link rel="stylesheet" href="src/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="src/favicon/favicon.jpg" type="image/x-icon">
 
-    <title>Document</title>
+    <title>Productos</title>
 </head>
 
 <body onload="setTimeout(cargarmuestra(),3000)">
@@ -151,17 +152,19 @@ foreach ($pro as $value) {
 </div>
 
 <div class="divcoment">   
-<div class="datos_objetos">
+<div class="datos_objetos text-center">
 <?php
 foreach ($pro as $value) {
     ?>
-
-
-
+    
+    <h3  ><?php echo $value[$category]["datos"] ?></h3>
 
 <?php
 }
 ?>
+
+<a  type="button"  href="carrito.php?ID=<?php echo $_GET['ID']?>" class="btn btn-success w-25">comprar</a>
+
 </div>
         
                 <h3> Comentarios </h3>

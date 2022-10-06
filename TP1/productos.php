@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>indice</title>
+    <title>Procuctos</title>
     <link href="src/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"
         type="text/css">
     <link rel="stylesheet" href="src/css/style.css" type="text/css">
-
+    <link rel="shortcut icon" href="src/favicon/favicon.jpg" type="image/x-icon">
 </head>
 
 <body onload="setTimeout(cargarprod(),3000)">
@@ -119,7 +119,7 @@
                       }
 
                    
-                    echo "<div class=col><div class=card style=width:18rem><img src=src/img/{$i}.webp class=a id=a{$i} alt={$value[$i]["nombre"]}><div class=texto><h5 class=card-title>{$mensaje}</h5><p class=card-text>{$value[$i]["datos"]}</p></div><ul class=list-group list-group-flush><li class=list-group-item>&#36 {$value[$i]["precio"]}</li></ul><div class=card-body><a href=muestra.php?ID={$value[$i]["ID"]} class=card-link>ver</a><a href=carrito.php class=card-link>carrito</a></div></div></div >";
+                    echo "<div class=col><div class=card style=width:18rem><img src=src/img/{$i}.webp class=a id=a{$i} alt={$value[$i]["nombre"]}><div class=texto><h5 class=card-title>{$mensaje}</h5><p class=card-text>{$value[$i]["datos"]}</p></div><ul class=list-group list-group-flush><li class=list-group-item>&#36 {$value[$i]["precio"]}</li></ul><div class=card-body><a href=muestra.php?ID={$value[$i]["ID"]} class=card-link>ver</a><a href=carrito.php?ID={$value[$i]["ID"]} class=card-link>carrito</a></div></div></div >";
                       
                     }
 

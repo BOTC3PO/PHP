@@ -12,7 +12,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
 
     <meta http-equiv="Pragma" content="no-cache">
-
+    <link rel="shortcut icon" href="src/favicon/favicon.jpg" type="image/x-icon">
 
     <title>indice</title>
     <link href="src/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"
@@ -29,7 +29,7 @@
 
 
 
-    <div class="container text-center">
+    <div class="container text-center mb-5">
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 justify-content-around justify-content-lg-center justify-content-xxl-center indexmen">
             <?php
                 $pro= @file_get_contents('src/DB/productos.json');
@@ -120,7 +120,7 @@
 
 
 
-                    echo "<div class=col><div class=card style=width:18rem><img src=src/img/{$rando}.webp class=a id=a{$i} alt={$value[$rando]["nombre"]}><div class=texto><h5 class=card-title>{$mensaje}</h5><p class=card-text>{$value[$rando]["datos"]}</p></div><ul class=list-group list-group-flush><li class=list-group-item>&#36 {$value[$rando]["precio"]}</li></ul><div class=card-body><a href=n   class=card-link>Card link</a><a href=n class=card-link>Another link</a></div></div></div >";
+                    echo "<div class=col><div class=card style=width:18rem><img src=src/img/{$rando}.webp class=a id=a{$i} alt={$value[$rando]["nombre"]}><div class=texto><h5 class=card-title>{$mensaje}</h5><p class=card-text>{$value[$rando]["datos"]}</p></div><ul class=list-group list-group-flush><li class=list-group-item>&#36 {$value[$rando]["precio"]}</li></ul><div class=card-body><a href=muestra.php?ID={$value[$i]["ID"]}   class=card-link>Ver</a><a href=carrito.php?ID={$value[$i]["ID"]} class=card-link>carrito</a></div></div></div >";
                     
                     }
 
