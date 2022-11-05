@@ -1,3 +1,5 @@
+<?php require ("config.php") ?>
+
 <!doctype html>
 <html lang="es">
 
@@ -12,12 +14,10 @@
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
 
     <meta http-equiv="Pragma" content="no-cache">
-    <link rel="shortcut icon" href="src/favicon/favicon.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php BASE_URL?>src/favicon/favicon.jpg" type="image/x-icon">
 
     <title>indice</title>
-    <link href="src/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"
-        type="text/css">
-    <link rel="stylesheet" href="src/css/style.css" type="text/css">
+    
+    <?php require ("src/template/link.php") ?>
 
 </head>
