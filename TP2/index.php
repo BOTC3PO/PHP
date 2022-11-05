@@ -18,6 +18,10 @@
 
     <title>indice</title>
     
-    <?php require ("src/template/link.php") ?>
+    <?php require ("src/templates/link.php") ;?>
 
 </head>
+
+<?php
+         require('src/templates/nav.php');
+    ?>
