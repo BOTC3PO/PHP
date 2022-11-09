@@ -25,3 +25,7 @@
 <?php
          require('src/templates/nav.php');
     ?>
+
+
+
+<?php require('src/templates/script.php') ?>
