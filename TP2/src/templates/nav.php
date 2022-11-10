@@ -24,10 +24,9 @@
                         Categoria
                     </a>
                     <ul class="dropdown-menu">
-                        <?php 
+                    <?php 
                              $data= @file_get_contents('src/DB/categoria.json');
-                              $data=json_decode("$data", true);
-                              
+                              $data=json_decode($data, true);
                               $date_now = date('d-m');
                               $bola=true;
                               foreach ($data as $value ) {
@@ -38,9 +37,9 @@
                                     #var_dump($value[$i]["dia"]);
                                     #argentina gtm-3
                                     #var_dump($date_now);
-                                   if (!(in_array($date_now,$value[$i]["dia"]))) {
-                                    $bola=false;
-                                   }
+                                  if (!(in_array($date_now,$value[$i]["dia"]))) {
+                                $bola=false;
+                                  }
                                 }
                                 if ($bola) {
                                     echo "<li><a class=dropdown-item  href={$value[$i]["link"]} >{$value[$i]["categoria"]}</a></li>";
