@@ -21,7 +21,7 @@
     <?php require("src/templates/link.php"); ?>
 
 </head>
-
+<body onload="setTimeout(cargarindex(),3000)">
 <?php
 require('src/templates/nav.php');
 ?>
