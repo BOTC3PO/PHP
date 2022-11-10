@@ -1,4 +1,5 @@
-<?php require ("config.php"); ?>
+<?php require("config.php") ?>
+
 <!doctype html>
 <html lang="es">
 
