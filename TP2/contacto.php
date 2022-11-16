@@ -4,7 +4,7 @@
 <?php
 
     $archivo = file_get_contents('src/DB/admin.json');
-   var_dump($archivo);
+   #var_dump($archivo);
     require_once('src/templates/funciones_input.php');
     require_once('src/templates/funciones_json.php');
     $lista = getJson('src/DB/admin.json');
@@ -13,20 +13,20 @@
         
         $email = test_input( $_POST['email'] ?? null );
         $mensaje = test_input( $_POST['mensaje'] ?? null );
-        var_dump($email);
-
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $regex = "/^([a-zA-Z0-9\.]+@+[a-zA-Z]+(\.)+[a-zA-Z]{2,3})$/";
+        if (preg_match($regex, $email)) {
+            
             if (is_null($mensaje) || empty($mensaje)) {
             $bolianos=false;
         }
         #var_dump(is_null($mensaje));
-        var_dump($mensaje);
+        #var_dump($mensaje);
         #$ID= test_input( $_GET['ID'] ?? null );
 
         if ($archivo=='{}') {
             if (($email!==null or $mensaje!==null)) {
             $lista = array(
-            'Estado'=>false,
+            'Estado'=>"0",
             'email' => $email,
             'mensaje' => $mensaje 
          );
@@ -34,7 +34,7 @@
         }
         }else{
         array_unshift($lista, array(
-            'Estado'=>false,
+            'Estado'=>"0",
             'email' => $email,
             'mensaje' => $mensaje  
         ));
@@ -42,21 +42,22 @@
         
           }
    
-
+          if ($bolianos==false) {
+            $lista="{}";
+        }else {
+          
+            $aux=json_encode($lista);
+    
+           # var_dump($aux);
+            file_put_contents('src/DB/admin.json',$aux);
+    
+        } 
+        
+         header('success.php');
         
     }
 
-    if ($bolianos==false) {
-        $lista="{}";
-    }else {
-      
-        $aux=json_encode($lista);
-
-       # var_dump($aux);
-        file_put_contents('src/DB/admin.json',$aux);
-
-    } 
-     header('success.php');
+    
  //   var_dump($lista);
 }
 ?>
@@ -113,10 +114,11 @@
     <div class="input-group m-2  d-flex">
         <form action="contacto.php" method="post">
             <label for="email">Email address</label>
-            <input type="email" class="form-control ziup" id="email" name="email" placeholder="name@example.com">
+            <!---placeholder="name@example.com"-------> 
+            <input type="email" class="form-control ziup" id="email" name="email" >
             <label for="mensaje" class="input-group-text">mensaje</label>
             <textarea class="form-control ziup" name="mensaje" id="mensaje" aria-label="With textarea"></textarea>
-            <button type="submit" name="enviar_formulario" class="btn l12" id="enviar"><p class="p-0 m-0">Enviar</p></button>
+            <button type="submit" name="submit" class="btn l12" id="enviar"><p class="p-0 m-0">Enviar</p></button>
         </form>
     </div>
 

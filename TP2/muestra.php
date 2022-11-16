@@ -7,6 +7,7 @@
     require_once('src/templates/funciones_json.php');
     $lista = getJson('src/comentarios/data.json');
     $bolianos=true;
+
     if( isset($_POST['submit']) ) {
         
         $titulo = test_input( $_POST['titulo'] ?? null );

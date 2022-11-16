@@ -29,8 +29,16 @@ require('src/templates/nav.php');
 <div class="container text-center mb-5">
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 justify-content-around justify-content-lg-center justify-content-xxl-center indexmen">
         <?php
+
+       
+
         $pro = @file_get_contents('src/DB/productos.json');
         $pro = json_decode($pro, true);
+
+     
+
+
+
         $date_now = date('d-m');
         $numeros = array();
         $bolian = true;
