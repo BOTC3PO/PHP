@@ -1,5 +1,8 @@
 <?php require("config.php") ?>
 
+
+
+
 <!doctype html>
 <html lang="es">
 
@@ -21,7 +24,7 @@
     <?php require("src/templates/link.php"); ?>
 
 </head>    
-    <body onload="setTimeout(cargarmuestra(),3000)">
+    <body>
     <?php
     require('src/templates/nav.php');
 ?>
