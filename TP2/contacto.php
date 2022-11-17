@@ -53,7 +53,7 @@
     
         } 
         
-         header('success.php');
+         header('Location:success.php');
         
     }
 

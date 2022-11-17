@@ -128,12 +128,19 @@ require('src/templates/nav.php');
             #var_dump($numeros);
         }
 
-
+       
 
 
         # 
         ?>
+
     </div>
+</div>
+<div class="d-flex  justify-content-center">
+    <a href="paginas.php" class="btn btn-primary">
+            ver mas
+
+         </a>
 </div>
 
 

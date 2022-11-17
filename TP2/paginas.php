@@ -1,5 +1,34 @@
 <?php require("config.php") ?>
+<?php
 
+function paginador_lista($lista, $pagina_actual, $cuantos_por_pagina)
+{
+
+    $desde = ($pagina_actual - 1) * $cuantos_por_pagina;
+
+    return array_splice($lista, $desde, $cuantos_por_pagina);
+
+}
+
+function paginador_enlaces($cantidad, $pagina_actual, $cuantos_por_pagina)
+{
+
+    $cantidad_paginas = ceil($cantidad / $cuantos_por_pagina);
+
+    $resultado = array(
+        'cantidad' => $cantidad_paginas,
+        'actual' => $pagina_actual,
+        'anterior' => ($pagina_actual > 1) ? ($pagina_actual - 1) : null,
+        'siguiente' => ($pagina_actual < $cantidad_paginas) ? ($pagina_actual + 1) : null,
+        'primero' => ($pagina_actual > 1) ? 1 : null,
+        'ultimo' => ($pagina_actual < $cantidad_paginas) ? $cantidad_paginas : null
+    );
+
+    return $resultado;
+
+}
+
+?>
 
 <!doctype html>
 <html lang="es">
@@ -57,121 +86,49 @@
         <div
             class="row row-cols-2 row-cols-md-3 row-cols-lg-4 justify-content-around justify-content-lg-center justify-content-xxl-center indexmen">
             <?php
-            $basededatos=false;
-    $category = $_GET['id'];
-    $nand=$_GET['n'];
     $disponibles = array("Pastas","Salsas","Pizzas","Hamburguezas","Japones","Mexicano","Empanadas","Otros","Postres","Locro","Fiesta","Bebidasytragos" );    
-    $nand=intval($nand);
-    if (!in_array($category,$disponibles)) {
-   
 
-        header("Location: index.php");
-    }else {
+
         try{
             $conexion = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASSWORD,
             array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
             $basededatos=true;
             }catch (PDOException $e)
             {
-            $basededatos=false; 
+            header('Location:error.php');
             }
 
-            $existe=file_exists("src/DB/productos.json");
-            if(!$existe) {
-                header('Location:error.php');
-            }else {
-                $pro= @file_get_contents('src/DB/productos.json');
-                $pro=json_decode($pro, true);
-            }
-
-                if ($basededatos) {
-                    $consulta  ="SELECT * FROM productos";
+           $consulta  ="SELECT * FROM productos";
                     $res=$conexion->prepare($consulta);
                     $res->execute();
                     $pro=$res->fetchAll(PDO::FETCH_ASSOC);
-                }
-                
-                $date_now = date('d-m');
-                $bolian=false;
-                foreach ($pro as $value) {
-                    for ($i=0; $i < 100; $i++) {
-                        
-                        if (!$basededatos) {
 
 
-                           $boliano=(in_array($date_now,$value[81]["dia"]));
-                         if ($nand==9&&$boliano) {
-                        $bolian=true;
-                        } else {
-                        $bolian=false;
-                        }
+   //Cantidad de empleados en total.
+   $cantidad = count($pro);
+   //Página actual.
+   $pagina_actual = $_GET['pag'] ?? 1;
+   //Cuántos registros por página.
+   $cuantos_por_pagina = 9;
+
+   //Enlaces del paginado.
+   $paginado_enlaces = paginador_enlaces($cantidad, $pagina_actual, $cuantos_por_pagina);
+
+   $resul = paginador_lista($pro, $pagina_actual, $cuantos_por_pagina);
+            $idmin=($cuantos_por_pagina*$pagina_actual)-$cuantos_por_pagina;
+            $idmax=$cuantos_por_pagina*$pagina_actual;
 
 
-                        $bolian=(($category==$disponibles[$nand]) and ($category==preg_replace('/\s+/', '',$value[$i]["categoria"]))); 
-                        }
-
-                        
-
-                    
-                    
-           
-                  
-
-                    if ($bolian) {
-
-                        switch ($value[$i]["categoria"]) {
-                            case 'Pastas':
-                                $mensaje = "Plato de ". $value[$i]["nombre"];
-                                break;
-                            case 'Salsas':
-                                $mensaje = "Salsa ". $value[$i]["nombre"];
-                                break;
-                            case 'Pizzas':
-                                $mensaje = "Pizza  ". $value[$i]["nombre"];
-                                break;
-                            case 'Hamburguezas':
-                                $mensaje = "Hamburgueza ". $value[$i]["nombre"];
-                                break; 
-                            case 'Japones':
-                                $mensaje =  $value[$i]["nombre"];
-                                break;
-                            case 'Mexicano':
-                              $mensaje =  $value[$i]["nombre"];
-                               break; 
-                            case 'Empanadas':
-                               $mensaje = "Empanada ". $value[$i]["nombre"];
-                                break;    
-                            case 'Otros':
-                                $mensaje =  $value[$i]["nombre"];
-                                break; 
-                            case 'Postres':
-                                $mensaje =  $value[$i]["nombre"];
-                                break; 
-                            case 'locro':
-                                $mensaje = "Plato de ". $value[$i]["nombre"];
-                                break;       
-                            case 'Fiesta':
-                                $mensaje =  $value[$i]["nombre"];
-                                break;  
-                            case 'Bebidas y tragos':
-                                $mensaje =  $value[$i]["nombre"];
-                                break;                                  
-                      }
-
-                   
-                    echo "<div class=col><div class=card style=width:18rem><img src=src/img/{$i}.webp class=a id=a{$i} alt={$value[$i]["nombre"]}><div class=texto><h5 class=card-title>{$mensaje}</h5><p class=card-text>{$value[$i]["datos"]}</p></div><ul class=list-group list-group-flush><li class=list-group-item>&#36 {$value[$i]["precio"]}</li></ul><div class=card-body><a href=muestra.php?ID={$value[$i]["ID"]} class=card-link>ver</a><a href=carrito.php?ID={$value[$i]["ID"]} class=card-link>carrito</a></div></div></div >";
-                      
-                    }
-
-                }
 
 
-                if ($basededatos) {
                     $categorias32 = array("Pastas","Salsas","Pizzas","Hamburguezas","Japones","Mexicano","Empanadas","Otros","Postres","Locro","Fiesta","Bebidas y tragos" );
  
-                            #var_dump($value);
+                      foreach ($pro as $value) {
+                        
+                     
+                               if ($idmin<=intval($value['id_Productos'])&&$idmax>intval($value['id_Productos'])) {
+                                #
                                
-                                if ( intval($value['Categorias_idCategorias'])==intval($nand)) {
                                     switch ($categorias32[$value['Categorias_idCategorias']]) {
                                         case 'Pastas':
                                             $mensaje = "Plato de ". $value["nombre"];
@@ -213,21 +170,45 @@
                                
     
                                   echo "<div class=col><div class=card style=width:18rem><img src=src/img/{$value['id_Productos']}.webp class=a id=a{$value['id_Productos']} alt={$value["nombre"]}><div class=texto><h5 class=card-title>{$mensaje}</h5><p class=card-text>{$value["datos"]}</p></div><ul class=list-group list-group-flush><li class=list-group-item>&#36 {$value["precio"]}</li></ul><div class=card-body><a href=muestra.php?ID={$value['id_Productos']} class=card-link>ver</a><a href=carrito.php?ID={$value['id_Productos']} class=card-link>carrito</a></div></div></div >";
+                                
                                 }
-
+                            }
                                
 
-                }
+                
 
 
-                    }
-                    #var_dump($numeros);
-                }
 
 ?>
         </div>
     </div>
+    <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <?php if($paginado_enlaces['anterior']): ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?pag=<?php echo $paginado_enlaces['primero'] ?>"> Primero </a>                        
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?pag=<?php echo $paginado_enlaces['anterior'] ?>"> <?php echo $paginado_enlaces['anterior'] ?> </a>
+                    </li>
+                <?php endif ?>
+                <li class="page-item active"> 
+                    <span class="page-link">
+                        <?php echo $paginado_enlaces['actual'] ?> 
+                    </span>
+                </li>
+                <?php if($paginado_enlaces['siguiente']): ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?pag=<?php echo $paginado_enlaces['siguiente'] ?>"> <?php echo $paginado_enlaces['siguiente'] ?> </a>
+                    </li>
+                    <li class="page-item">
+                    <a class="page-link" href="?pag=<?php echo $paginado_enlaces['ultimo'] ?>"> Último </a>
+                    </li>
+                <?php endif ?>
+            </ul>
+        </nav>
 
+    </div>
 
 
     <?php

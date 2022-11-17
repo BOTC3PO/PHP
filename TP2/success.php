@@ -28,7 +28,15 @@
     <?php
     require('src/templates/nav.php');
 ?>
-    
+    <div style="height: 100vh ;min-height:fit-content ;text-align: center;" class="d-flex row">
+    <h2 style="margin-top:10rem ;">
+        Datos cargados correctamente
+    </h2>
+    <a href="index.php" class="btn" style="background-color: black;color:aliceblue">
+        regresar al indice
+    </a>
+    </div>
+
 <?php
 require('src/templates/foot.php');
 ?>
