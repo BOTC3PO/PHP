@@ -79,70 +79,85 @@
             <div class="col m-0 ">
                 <?php
 $category = $_GET['ID'];
-$pro= @file_get_contents('src/DB/productos.json');
-$pro=json_decode($pro, true);
+
+try{
+    $conexion = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASSWORD,
+    array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+    $consulta  ="SELECT * FROM productos";
+    $res=$conexion->prepare($consulta);
+    $res->execute();
+    $pro=$res->fetchAll(PDO::FETCH_ASSOC);
+    }catch (PDOException $e)
+    {
+        header('Location:error.php');
+    }
+
+ $categorias32 = array("Pastas","Salsas","Pizzas","Hamburguezas","Japones","Mexicano","Empanadas","Otros","Postres","Locro","Fiesta","Bebidas y tragos" );
 $i= (int)$category;
+
 foreach ($pro as $value) {
 
-    switch ($value[$i]["categoria"]) {
+    switch ($categorias32[$value['Categorias_idCategorias']]) {
         case 'Pastas':
-            $mensaje = "Plato de ". $value[$i]["nombre"];
+            $mensaje = "Plato de ". $value["nombre"];
             break;
         case 'Salsas':
-            $mensaje = "Salsa ". $value[$i]["nombre"];
+            $mensaje = "Salsa ". $value["nombre"];
             break;
         case 'Pizzas':
-            $mensaje = "Pizza  ". $value[$i]["nombre"];
+            $mensaje = "Pizza  ". $value["nombre"];
             break;
         case 'Hamburguezas':
-            $mensaje = "Hamburgueza ". $value[$i]["nombre"];
+            $mensaje = "Hamburgueza ". $value["nombre"];
             break; 
         case 'Japones':
-            $mensaje =  $value[$i]["nombre"];
+            $mensaje =  $value["nombre"];
             break;
         case 'Mexicano':
-          $mensaje =  $value[$i]["nombre"];
+          $mensaje =  $value["nombre"];
            break; 
         case 'Empanadas':
-           $mensaje = "Empanada ". $value[$i]["nombre"];
+           $mensaje = "Empanada ". $value["nombre"];
             break;    
         case 'Otros':
-            $mensaje =  $value[$i]["nombre"];
+            $mensaje =  $value["nombre"];
             break; 
         case 'Postres':
-            $mensaje =  $value[$i]["nombre"];
+            $mensaje =  $value["nombre"];
             break; 
         case 'locro':
-            $mensaje = "Plato de ". $value[$i]["nombre"];
+            $mensaje = "Plato de ". $value["nombre"];
             break;       
         case 'Fiesta':
-            $mensaje =  $value[$i]["nombre"];
+            $mensaje =  $value["nombre"];
             break;  
         case 'Bebidas y tragos':
-            $mensaje =  $value[$i]["nombre"];
+            $mensaje =  $value["nombre"];
             break;                                  
   }
     echo "<h3>{$mensaje}</h3>";
+
+    if ($i==$value["id_Productos"]) {
     ?>
     </div> <div class="h-50 ">
     <?php
-    echo "<img src=src/img/{$i}.webp class=a  alt={$value[$i]["nombre"]}>";
+    echo "<img src=src/img/{$i}.webp class=a  alt={$value["nombre"]}>";
     ?>
     </div> <div class="col">
     <?php
-    echo  "<h4>$ {$value[$i]["precio"]}</h4>";
+    echo  "<h4>$ {$value["precio"]}</h4>";
         ?>   
     </div> <div class="col">
      <?php
-        if ($value[$i]["promociones"]!="") { 
-        echo  "<h4> {$value[$i]["promociones"]}</h4>";
+        if ($value["Promociones"]!="") { 
+        echo  "<h4> {$value["Promociones"]}</h4>";
     }
 
     ?>
     </div>
 
 
-<?php }?>
+<?php }}?>
 
 
             
@@ -153,12 +168,11 @@ foreach ($pro as $value) {
 <div class="datos_objetos text-center">
 <?php
 foreach ($pro as $value) {
+    if ($i==$value["id_Productos"]) {
     ?>
-    
     <h3  ><?php echo $value[$category]["datos"] ?></h3>
-
 <?php
-}
+}}
 ?>
 
 <a  type="button"  href="carrito.php?ID=<?php echo $_GET['ID']?>" class="btn btn-success w-25">comprar</a>

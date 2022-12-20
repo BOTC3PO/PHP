@@ -21,7 +21,7 @@
     <?php require("src/templates/link.php"); ?>
 
 </head>
-<body onload="setTimeout(cargarindex(),3000)">
+<body onload="setTimeout(cargarprod(),3000)">
 <?php
 require('src/templates/nav.php');
 ?>
@@ -30,40 +30,52 @@ require('src/templates/nav.php');
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 justify-content-around justify-content-lg-center justify-content-xxl-center indexmen">
         <?php
 
-       
-
-        $pro = @file_get_contents('src/DB/productos.json');
-        $pro = json_decode($pro, true);
-
-     
-
-
-
-        $date_now = date('d-m');
-        $numeros = array();
+try{
+    $conexion = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASSWORD,
+    array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+    $consulta  ="SELECT * FROM productos";
+    $res=$conexion->prepare($consulta);
+    $res->execute();
+    $pro=$res->fetchAll(PDO::FETCH_ASSOC);
+    }catch (PDOException $e)
+    {
+        header('Location:error.php');
+    }
+   
+   
+$disponibles = array("Pastas","Salsas","Pizzas","Hamburguezas","Japones","Mexicano","Empanadas","Otros","Postres","Locro","Fiesta","Bebidasytragos" );    
+//$nand=intval($nand);
+ $numeros = array(); 
+  $bolian = true;
+  $date_now = date('d-m');
+for ($i = 0; $i < 8; $i++) {
+    do {
         $bolian = true;
+        $rando = rand(0, count($pro)-1);
+        # echo $rando ." \n";
+        if ($i == 0) {
+            array_push($numeros, $rando);
+        }
+
+        if (!$i == 0) {
+            if (in_array($rando, $numeros)) {
+               $bolian = false;
+            } else {
+                array_push($numeros, $rando);
+            }
+        }
+
+
+    } while (!$bolian);
+    }
+        
+
         #var_dump($pro);
         foreach ($pro as $value) {
-            for ($i = 0; $i < 8; $i++) {
-                do {
-                    $bolian = true;
-                    $rando = rand(0, 100);
-                    # echo $rando ." \n";
-                    if ($i == 0) {
-                        array_push($numeros, $rando);
-                    }
-
-                    if (!$i == 0) {
-                        if (in_array($rando, $numeros)) {
-                            $bolian = false;
-                        } else {
-                            array_push($numeros, $rando);
-                        }
-                    }
-                } while (!$bolian);
-                $boliano = (in_array($date_now, $value[81]["dia"]));
-                echo $boliano;
-                if ($rando != 81 and $boliano) {
+            
+                //$boliano = (in_array($date_now, $value[81]["dia"]));
+                #echo $boliano;
+               /* if ($rando != 81 and $boliano) {
                     $bolian = true;
                 } else {
                     if ($rando == 81) {
@@ -72,63 +84,64 @@ require('src/templates/nav.php');
                     } else {
                         $bolian = true;
                     }
-                }
+                }*/
+            
 
-                if ($bolian) {
+            $z=true;
 
-                    switch ($value[$rando]["categoria"]) {
-                        case 'Pastas':
-                            $mensaje = "Plato de " . $value[$rando]["nombre"];
-                            break;
-                        case 'Salsas':
-                            $mensaje = "Salsa " . $value[$rando]["nombre"];
-                            break;
-                        case 'Pizzas':
-                            $mensaje = "Pizza  " . $value[$rando]["nombre"];
-                            break;
-                        case 'Hamburguezas':
-                            $mensaje = "Hamburgueza " . $value[$rando]["nombre"];
-                            break;
-                        case 'Japones':
-                            $mensaje =  $value[$rando]["nombre"];
-                            break;
-                        case 'Mexicano':
-                            $mensaje =  $value[$rando]["nombre"];
-                            break;
-                        case 'Empanadas':
-                            $mensaje = "Empanada " . $value[$rando]["nombre"];
-                            break;
-                        case 'Otros':
-                            $mensaje =  $value[$rando]["nombre"];
-                            break;
-                        case 'Postres':
-                            $mensaje =  $value[$rando]["nombre"];
-                            break;
-                        case 'locro':
-                            $mensaje = "Plato de " . $value[$rando]["nombre"];
-                            break;
-                        case 'Fiesta':
-                            $mensaje =  $value[$rando]["nombre"];
-                            break;
-                        case 'Bebidas y tragos':
-                            $mensaje =  $value[$rando]["nombre"];
-                            break;
-                    }
+            for ($i=0; $i < 8; $i++) {  
+            #echo $numeros[$i] . "    ";
+            $t = $numeros[$i]==$value["id_Productos"];
+            if($t&&$z) {
+                $z=false;
+            $categorias32 = array("Pastas","Salsas","Pizzas","Hamburguezas","Japones","Mexicano","Empanadas","Otros","Postres","Locro","Fiesta","Bebidas y tragos" );
+                        switch ($categorias32[$value['Categorias_idCategorias']]) {
+                            case 'Pastas':
+                                $mensaje = "Plato de ". $value["nombre"];
+                                break;
+                            case 'Salsas':
+                                $mensaje = "Salsa ". $value["nombre"];
+                                break;
+                            case 'Pizzas':
+                                $mensaje = "Pizza  ". $value["nombre"];
+                                break;
+                            case 'Hamburguezas':
+                                $mensaje = "Hamburgueza ". $value["nombre"];
+                                break; 
+                            case 'Japones':
+                                $mensaje =  $value["nombre"];
+                                break;
+                            case 'Mexicano':
+                              $mensaje =  $value["nombre"];
+                               break; 
+                            case 'Empanadas':
+                               $mensaje = "Empanada ". $value["nombre"];
+                                break;    
+                            case 'Otros':
+                                $mensaje =  $value["nombre"];
+                                break; 
+                            case 'Postres':
+                                $mensaje =  $value["nombre"];
+                                break; 
+                            case 'locro':
+                                $mensaje = "Plato de ". $value["nombre"];
+                                break;       
+                            case 'Fiesta':
+                                $mensaje =  $value["nombre"];
+                                break;  
+                            case 'Bebidas y tragos':
+                                $mensaje =  $value["nombre"];
+                                break;                                  
+                      }
+                   
 
-                    #   {$value[$rando]["categoria"]} {$value[$rando]["nombre"]};
-                    #   echo   "<div class=col><div class=p-3 border bg-light><img src=src/img/{$rando}.webp class=cardC  alt={$value[$rando]["nombre"]} ><p>$mensaje</p></div></div >";
-
-
-
-
-
-                    echo "<div class=col><div class=card style=width:18rem><img src=src/img/{$rando}.webp class=a id=a{$i} alt={$value[$rando]["nombre"]}><div class=texto><h5 class=card-title>{$mensaje}</h5><p class=card-text>{$value[$rando]["datos"]}</p></div><ul class=list-group list-group-flush><li class=list-group-item>&#36 {$value[$rando]["precio"]}</li></ul><div class=card-body><a href=muestra.php?ID={$value[$i]["ID"]}   class=card-link>Ver</a><a href=carrito.php?ID={$value[$i]["ID"]} class=card-link>carrito</a></div></div></div >";
-                }
-            }
+                      echo "<div class=col><div class=card style=width:18rem><img src=src/img/{$value['id_Productos']}.webp class=a id=a{$value['id_Productos']} alt={$value["nombre"]}><div class=texto><h5 class=card-title>{$mensaje}</h5><p class=card-text>{$value["datos"]}</p></div><ul class=list-group list-group-flush><li class=list-group-item>&#36 {$value["precio"]}</li></ul><div class=card-body><a href=muestra.php?ID={$value['id_Productos']} class=card-link>ver</a><a href=carrito.php?ID={$value['id_Productos']} class=card-link>carrito</a></div></div></div >";
+                    
+            
             #var_dump($numeros);
         }
-
-       
+    }
+}
 
 
         # 
