@@ -191,7 +191,7 @@ INSERT INTO `mydb`.`Productos` (`Categorias_idCategorias`, `nombre`, `id_Product
 INSERT INTO `mydb`.`Productos` (`Categorias_idCategorias`, `nombre`, `id_Productos`, `datos`, `precio`, `Promociones`) VALUES (8, 'naranja', 77, 'una naranja', '70', '');
 INSERT INTO `mydb`.`Productos` (`Categorias_idCategorias`, `nombre`, `id_Productos`, `datos`, `precio`, `Promociones`) VALUES (8, 'frutillas', 78, '500g de frutillas', '300', '');
 INSERT INTO `mydb`.`Productos` (`Categorias_idCategorias`, `nombre`, `id_Productos`, `datos`, `precio`, `Promociones`) VALUES (8, 'frutillas con crema', 79, '500g frutillas con crema', '570', '');
-INSERT INTO `mydb`.`Productos` (`Categorias_idCategorias`, `nombre`, `id_Productos`, `datos`, `precio`, `Promociones`) VALUES (8, 'chocolate y queso', 80, ' ', ' ', ' ');
+INSERT INTO `mydb`.`Productos` (`Categorias_idCategorias`, `nombre`, `id_Productos`, `datos`, `precio`, `Promociones`) VALUES (8, 'chocolate y queso', 80, ' ', '400', ' ');
 INSERT INTO `mydb`.`Productos` (`Categorias_idCategorias`, `nombre`, `id_Productos`, `datos`, `precio`, `Promociones`) VALUES (9, 'locro', 81, '\'locro\' es un plato tradicional argentino', '1000', ' ');
 INSERT INTO `mydb`.`Productos` (`Categorias_idCategorias`, `nombre`, `id_Productos`, `datos`, `precio`, `Promociones`) VALUES (10, 'asado', 82, '1 kg de asado, pieza a eleccion', '5000', '');
 INSERT INTO `mydb`.`Productos` (`Categorias_idCategorias`, `nombre`, `id_Productos`, `datos`, `precio`, `Promociones`) VALUES (10, 'picada', 83, 'aros de cebolla, jamon,queso,queso empanado,salame,empanaditas y pan', '2000', '');

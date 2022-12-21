@@ -6,5 +6,7 @@
     <script src="<?php BASE_URL?>src/lib/bootstrap/js/bootstrap.min.js"
         crossorigin="anonymous"
         type="text/javascript">
-    </script>
+    </script>  
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="<?php BASE_URL?>src/js/index.js" type="text/javascript"></script>
+

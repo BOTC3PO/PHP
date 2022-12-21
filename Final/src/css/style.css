@@ -298,3 +298,22 @@ iframe{
   background-color: green !important;
   color: #fff !important;
 }
+
+
+.svg_rtu{
+    width: 20px !important;
+    height: 20px !important;
+}
+.ssg{
+  width: 20px !important;
+  height: 20px !important;
+}
+
+
+table{
+  text-align: center;
+}
+
+.pantallamin{
+  min-height: 60vh;
+}
