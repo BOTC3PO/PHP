@@ -135,9 +135,12 @@ foreach ($pro as $value) {
             $mensaje =  $value["nombre"];
             break;                                  
   }
-    echo "<h3>{$mensaje}</h3>";
+    
+
+  #echo $i==$value["id_Productos"];
 
     if ($i==$value["id_Productos"]) {
+        echo "<h3>{$mensaje}</h3>";
     ?>
     </div> <div class="h-50 ">
     <?php
@@ -170,7 +173,7 @@ foreach ($pro as $value) {
 foreach ($pro as $value) {
     if ($i==$value["id_Productos"]) {
     ?>
-    <h3  ><?php echo $value[$category]["datos"] ?></h3>
+    <h3  ><?php echo $value["datos"] ?></h3>
 <?php
 }}
 ?>
